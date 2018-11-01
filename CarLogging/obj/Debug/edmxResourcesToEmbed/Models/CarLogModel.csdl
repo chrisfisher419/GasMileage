@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarLogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Car_Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Miles_Driven" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Gallons_Filled" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Fill_Up_DateTime" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="MPG" Type="Decimal" Precision="38" Scale="20" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="CarLogEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+  </EntityContainer>
+</Schema>

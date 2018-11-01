@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CarLogging.Models.Log>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miles_Driven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gallons_Filled)
+        </th>
+        <th>
+            @Html.ActionLink("Fill Up Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miles_Driven)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gallons_Filled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fill_Up_DateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MPG)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.LogID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LogID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LogID })
+            </td>
+        </tr>
+    }
+
+</table>

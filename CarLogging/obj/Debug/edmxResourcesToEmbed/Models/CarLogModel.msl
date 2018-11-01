@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarLogModelStoreContainer" CdmEntityContainer="CarLogEntities">
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="CarLogModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="MPG" ColumnName="MPG" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Car_Model" ColumnName="Car Model" />
+          <ScalarProperty Name="Miles_Driven" ColumnName="Miles Driven" />
+          <ScalarProperty Name="Gallons_Filled" ColumnName="Gallons Filled" />
+          <ScalarProperty Name="Fill_Up_DateTime" ColumnName="Fill Up DateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
